@@ -1,0 +1,278 @@
+
+@import './normalize';
+
+/*
+ *此css仅针对移动端webkit内核
+ *注：微信X5是基于webkit开发的
+ */
+
+* { 
+    box-sizing: border-box; 
+    -webkit-tap-highlight-color:rgba(0,0,0,0);
+}
+
+html { 
+    font-family:"Helvetica Neue", "San Fransico", "苹方", Helvetica, STHeiTi, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    height: 100%;
+}
+
+body{ 
+    height: 100%; 
+    color: #666;
+    word-wrap:break-word;
+    word-break:break-all;
+    font-size: 0.875rem;
+}
+
+h1, h2, h3, h4, h5, h6, p, figure, form, blockquote,ul, ol, li, dl, dd,td,th  { 
+    margin: 0; 
+    padding:0;
+}
+
+table { 
+    border-collapse: collapse; 
+    border-spacing: 0; 
+    table-layout: fixed;
+}
+
+ul, ol { 
+    list-style: none outside none; 
+}
+
+button, input, optgroup, select, textarea { 
+    color: inherit; 
+    font: inherit; 
+    margin: 0;  
+    padding:0;
+    outline: none;
+}
+
+a, a:active { 
+    text-decoration: none;
+    color:inherit; 
+}
+
+a:active, a:focus, img:focus {
+    outline: 0; 
+}
+
+img{
+    border: 0;
+    max-width: 100%;
+    vertical-align: top;
+}
+
+::-webkit-input-placeholder {
+  color: #ccc;
+  opacity: 1;
+}
+
+/*重置 文本输入框和文本输入域样式*/
+textarea,input[type="text"],input[type="password"],input[type="search"],input[type="number"],input[type="tel"],input[type="email"]{
+    -webkit-appearance: none;
+    border-radius: 0;
+    color: #999;
+    padding-left: 6px;
+}
+
+/*重置 按钮样式，并定义buttonDefault供其它标签模拟按钮*/
+.buttonDefault, button, input[type="button"], input[type="reset"], input[type="submit"] {
+    border-radius: 0;
+    -webkit-appearance: none;
+    color: #fff;
+    background-color: #2c9afe;
+    border: 0;
+}
+.buttonDefault{
+    text-align: center;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.buttonDefault.disbled{
+    background-color: #ccc;
+}
+
+.inputDefault{
+    width: 100%;
+    border-radius: 0;
+    background-color: #fff;
+}
+
+
+/*
+ *文字颜色
+ *分按色值定义和按用途定义
+ */
+.useTitle,.colorBlack{
+    color: #2c2c2c; /*黑色，可用于标题*/
+}
+.useContent,.colorDarkGrey{
+    color: #666; /*深灰色，可用于内容*/
+}
+.colorLightGray{
+    color: #999; /*浅灰色*/
+}
+.useLink,.colorBlue{
+    color: #2c9afe; /*蓝色，可用于无背景色的文字链接或按钮*/
+}
+.usePrice,.colorRed{
+    color: #ff4444; /*红色，可用于价格*/
+}
+.useKeyword,.colorBrown{
+    color: #7b4600; /*棕色色，可用于关键字*/
+}
+.useTip,.colorOrange{
+    color: #ff6000; /*橙色，可用于提示文字*/
+}
+
+/*字体大小*/
+.font1375{
+    font-size: 1.375rem;
+}
+.font1250{
+    font-size: 1.25rem;
+}
+.font1125{
+    font-size: 1.125rem;
+}
+.font1000{
+    font-size: 1rem;
+}
+.font0875{
+    font-size: 0.875rem;
+}
+.font0750{
+    font-size: 0.75rem;
+}
+.font0625{
+    font-size: 0.625rem;
+}
+
+/*自适应图片(使用时需另定义样式width和padding)*/
+.imgAdaptive{
+    height: 0;
+    position: relative;
+    overflow: hidden;
+}
+.imgAdaptive img{ 
+    position: absolute;
+    width: 100%; 
+    height: 100%; 
+}
+
+/*清除浮动*/
+.clearfix:after{
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0; 
+}
+
+/*1像素border处理("px-one-border-all"不可与clearfix同时使用)*/
+.px-one-border{ 
+    position:relative;
+}
+.px-one-border.px-one-border-top::before,
+.px-one-border.px-one-border-bottom::before,
+.px-one-border.px-one-border-all::before,
+.px-one-border.px-one-border-all::after{
+    position: absolute; 
+    left: 0; 
+    bottom: 0; 
+    width: 100%; 
+    height: 1px; 
+    content: ''; 
+    background-color: #e0e0e0;
+    transform: scale(1,0.5);
+    transform-origin: center bottom;
+}
+.px-one-border.px-one-border-top::before,
+.px-one-border.px-one-border-all::before{
+    bottom:auto; 
+    top:0; 
+    transform-origin: center top;
+}
+
+/********************************flex*******************************/
+.flex{
+    display: flex;
+}
+
+/*垂直水平居中*/
+.flex.horizontal-vertical-centering{
+    justify-content: center;
+    align-items: center;
+}
+
+/*水平居中*/
+.flex.vertical-centering{
+    justify-content: center;
+}
+
+/*垂直居中*/
+.flex.horizontal-centering{
+    align-items: center;
+}
+
+/*水平两端对齐*/
+.flex.justify-align{
+    justify-content: space-between;
+}
+
+/*整行元素*/
+.group-item{
+    margin-bottom: 10px;
+}
+.group-input,
+.group-select,
+.group-textarea,
+.group-btn{
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.group-select{
+    justify-content: space-between;
+}
+
+.group-input .input-text,
+.group-select .select-text,
+.group-textarea .textarea-text,
+.group-btn .btn{
+    flex: 1.0;
+}
+
+.group-select .select-text,
+.group-textarea .textarea-text{
+    padding-left: 6px;
+    padding-right: 6px;
+}
+.group-select .group-select-item{
+    display: flex;
+    margin-left:5%;
+    flex: 1.0;
+}
+.group-select .group-select-item:first-child{
+    margin-left:0;
+}
+
+/*
+ *字体针对不同宽度屏幕做放大处理
+ *默认359px以内用16px字号
+ */
+@media screen and (min-width: 360px) {/*360px-399px屏幕*/
+    html {
+        font-size: 18px;
+    }
+}
+
+@media screen and (min-width: 400px) {/*400px+++屏幕*/
+    html {
+        font-size: 20px;
+    }
+}

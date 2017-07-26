@@ -1,0 +1,22 @@
+.react-tip-pop {
+    position: fixed;
+    top: 30%;
+    left: 15%;
+    right: 15%;
+    text-align: center;
+    display: none;
+    z-index:10000;
+    &.show{
+        display: block;
+    }
+    .react-tip-pop-cont {
+        display: inline-block;
+        vertical-align: top;
+        padding: 10px;
+        min-width: 200px;
+        max-width: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+        color: #fff;
+        border-radius: 5px;
+    }
+}
